@@ -55,7 +55,7 @@ namespace Socket
     typedef string Ip;
     typedef unsigned int Port;
 #ifdef WINDOWS
-    typedef int socklen_t;
+    typedef unsigned int socklen_t;
 #endif
     
     class SocketException : public exception

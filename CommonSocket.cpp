@@ -30,7 +30,7 @@
 namespace Socket
 {
 #ifdef WINDOWS
-        unsigned int Socket::_num_sockets = 0;
+    unsigned int CommonSocket::_num_sockets = 0;
 #endif
 
     void CommonSocket::_socket(void)
