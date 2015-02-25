@@ -111,7 +111,7 @@ namespace Socket
         }
         
         int ret;
-        if ((ret = ::send(this->_socket_id, buffer, len, 0)) == -1) throw SocketException("[send] Cannot send");
+        if ((ret = ::send(this->_socket_id, (const char*)buffer, len, 0)) == -1) throw SocketException("[send] Cannot send");
         return ret;
     }
     
