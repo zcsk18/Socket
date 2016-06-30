@@ -14,7 +14,13 @@ int main(void)
     try
     {
         Socket::UDP sock;
-        Socket::Address to("127.0.0.1", 10000);
+         struct hostent *he;
+        he = gethostbyname("127.0.0.1");
+        struct in_addr **addr_list;
+        addr_list = (struct in_addr **)he->h_addr_list;
+
+
+        Socket::Address to(inet_ntoa(*addr_list[0]), 10000);
         
         sock.send<string>(to, "this is the string"); // ("127.0.0.1", 10000, "this is a string");
                                                      // as well as the others
