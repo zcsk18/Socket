@@ -94,6 +94,12 @@ namespace Socket
         this->_binded = false;
     }
     
+    int CommonSocket::socket(void)
+    {
+        return this->_socket_id;
+    }
+    
+    
     void CommonSocket::listen_on_port(Port port)
     {
         if (this->_binded) throw SocketException("[listen_on_port] Socket already binded to a port, close the socket before to re-bind");
