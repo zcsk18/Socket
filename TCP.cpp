@@ -97,7 +97,7 @@ namespace Socket
     }
     
     template <class T>
-    int TCP::send(const T* buffer, size_t len)
+    int TCP::send(const T* buffer, size_t len=1)
     {
         if (!this->_binded) throw SocketException("[send] Socket not binded");
         if (!this->_opened) throw SocketException("[send] Socket not opened");
@@ -116,7 +116,7 @@ namespace Socket
     }
     
     template <class T>
-    int TCP::receive(T* buffer, size_t len)
+    int TCP::receive(T* buffer, size_t len=1)
     {
         if (!this->_binded) throw SocketException("[send_file] Socket not binded");
         if (!this->_opened) throw SocketException("[send_file] Socket not opened");
