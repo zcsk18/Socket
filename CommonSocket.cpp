@@ -94,7 +94,7 @@ namespace Socket
         this->_binded = false;
     }
     
-    int CommonSocket::socket(void)
+    int CommonSocket::get_id(void)
     {
         return this->_socket_id;
     }
