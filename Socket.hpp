@@ -127,6 +127,7 @@ namespace Socket
 
         void open(void);
         void close(void);
+        int socket();
         
         virtual void listen_on_port(Port);
     };
