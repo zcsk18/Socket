@@ -196,7 +196,7 @@ namespace Socket
         if ((file_size % SOCKET_MAX_BUFFER_LEN) != 0)
         {
             this->send<char>(&sync, 1);
-            this->send<char>(chunk, file_size % SOCKET_MAX_BUFFER_LEN);
+            this->receive<char>(chunk, file_size % SOCKET_MAX_BUFFER_LEN);
             fp.write(chunk, file_size % SOCKET_MAX_BUFFER_LEN);
         }
         
